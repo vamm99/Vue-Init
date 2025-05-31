@@ -20,6 +20,14 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 npm install
 ```
 
+### .env
+
+Create a .env file in the root of the project.
+
+```sh
+VITE_API_URL=http://127.0.0.1:8000/api/v1
+```
+
 ### Compile and Hot-Reload for Development
 
 ```sh
