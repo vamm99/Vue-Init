@@ -3,12 +3,12 @@ import { authRoutes } from '@/modules/auth/routes'
 import { dashboardRoutes } from '@/modules/dashboard/routes'
 import { projectRoutes } from '@/modules/project/routes'
 import notFound from '@/helpers/views/notFound.vue'
+import LoginView from '@/modules/auth/views/LoginView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'noFound',
-    component: notFound
+    component: LoginView
   },
   ...authRoutes,
   ...dashboardRoutes,
