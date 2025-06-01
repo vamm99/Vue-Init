@@ -4,6 +4,7 @@ import { dashboardRoutes } from '@/modules/dashboard/routes'
 import { projectRoutes } from '@/modules/project/routes'
 import notFound from '@/helpers/views/notFound.vue'
 import LoginView from '@/modules/auth/views/LoginView.vue'
+import { authGuard } from './authGuard'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -15,6 +16,7 @@ const routes: RouteRecordRaw[] = [
   ...projectRoutes,
   {
     path: '/:pathMatch(.*)*',
+    name: 'not-found',
     component: notFound
   }
 ]
@@ -23,5 +25,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 })
+
+router.beforeEach(authGuard)
 
 export default router

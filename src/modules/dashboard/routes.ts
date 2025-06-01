@@ -4,19 +4,21 @@ import AdminLayout from '@/layouts/AdminLayout.vue'
 import notFound from '@/helpers/views/notFound.vue'
 
 export const dashboardRoutes: RouteRecordRaw[] = [
-    {
-        path: '/dashboard',
-        name: 'dashboard',
-        component: AdminLayout,
-        children: [
-            {
-                path: '',
-                component: Dashboard,
-            },
-        ],
-    },
-    {
-        path: '/:pathMatch(.*)*',
-        component: notFound
-    },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: AdminLayout,
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path: '',
+        name: 'dashboard-home',
+        component: Dashboard,
+      },
+    ],
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: notFound
+  },
 ]
