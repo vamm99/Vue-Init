@@ -3,15 +3,14 @@ import type { RouteLocationNormalized, NavigationGuardNext } from 'vue-router'
 export function authGuard(
   to: RouteLocationNormalized,
   from: RouteLocationNormalized,
-  next: NavigationGuardNext
+  next: NavigationGuardNext,
 ): void {
-
   // Verificar autenticación
   const token = localStorage.getItem('auth_token')
   const isAuthenticated = !!token
 
   // Verificar si la ruta requiere autenticación
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth)
 
   // Caso 1: Ruta protegida sin autenticación
   if (requiresAuth && !isAuthenticated) {
@@ -19,8 +18,8 @@ export function authGuard(
       name: 'login',
       query: {
         redirect: to.fullPath,
-        reason: 'auth-required'
-      }
+        reason: 'auth-required',
+      },
     })
   }
 

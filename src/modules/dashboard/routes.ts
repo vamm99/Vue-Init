@@ -19,6 +19,6 @@ export const dashboardRoutes: RouteRecordRaw[] = [
   },
   {
     path: '/:pathMatch(.*)*',
-    component: notFound
+    component: notFound,
   },
 ]

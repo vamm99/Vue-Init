@@ -9,7 +9,7 @@ import { authGuard } from './authGuard'
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: LoginView
+    component: LoginView,
   },
   ...authRoutes,
   ...dashboardRoutes,
@@ -17,8 +17,8 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
-    component: notFound
-  }
+    component: notFound,
+  },
 ]
 
 const router = createRouter({

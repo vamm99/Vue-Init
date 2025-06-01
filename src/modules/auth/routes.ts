@@ -11,6 +11,6 @@ export const authRoutes: RouteRecordRaw[] = [
   },
   {
     path: '/:pathMatch(.*)*',
-    component: notFound
+    component: notFound,
   },
 ]
