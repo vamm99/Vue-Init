@@ -8,7 +8,7 @@ export const projectRoutes: RouteRecordRaw[] = [
     path: '/projects',
     name: 'projects',
     component: AdminLayout,
-    meta: { requiresAuth: true },
+    meta: { requiresAuth: false },
     children: [
       {
         path: '',

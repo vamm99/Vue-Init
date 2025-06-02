@@ -8,7 +8,7 @@ export const dashboardRoutes: RouteRecordRaw[] = [
     path: '/dashboard',
     name: 'dashboard',
     component: AdminLayout,
-    meta: { requiresAuth: true },
+    meta: { requiresAuth: false },
     children: [
       {
         path: '',
